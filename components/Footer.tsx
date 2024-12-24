@@ -1,53 +1,100 @@
-import { FaLocationArrow } from "react-icons/fa6";
-
-import { socialMedia } from "@/data";
-import MagicButton from "./MagicButton";
+import { socialMedia } from "@/data/socialMedia"; // Make sure this file exports `socialMedia` array
+import { FaArrowUp } from "react-icons/fa"; // Import the up arrow icon
+import Contact from "./Contact";
 
 const Footer = () => {
+  // Function to scroll to the top
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // Smooth scroll animation
+    });
+  };
+
   return (
-    <footer className="w-full pt-20 pb-10" id="contact">
-      {/* background grid */}
-      <div className="w-full absolute left-0 -bottom-72 min-h-96">
-        <img
-          src="/footer-grid.svg"
-          alt="grid"
-          className="w-full h-full opacity-50 "
-        />
-      </div>
+    <footer
+      className="w-full bg-gray-900 text-gray-200 pt-16 pb-12 mb-[100px]"
+      id="footer"
+    >
+      {/* Contact Section Component */}
+      <Contact />
 
-      <div className="flex flex-col items-center">
-        <h1 className="heading lg:max-w-[45vw]">
-          Ready to take <span className="text-purple">your</span> digital
-          presence to the next level?
-        </h1>
-        <p className="text-white-200 md:mt-10 my-5 text-center">
-          Reach out to me today and let&apos;s discuss how I can help you
-          achieve your goals.
-        </p>
-        <a href="mailto:contact@jsmastery.pro">
-          <MagicButton
-            title="Let's get in touch"
-            icon={<FaLocationArrow />}
-            position="right"
-          />
-        </a>
-      </div>
-      <div className="flex mt-16 md:flex-row flex-col justify-between items-center">
-        <p className="md:text-base text-sm md:font-normal font-light">
-          Copyright © 2024 Adrian Hajdin
-        </p>
-
-        <div className="flex items-center md:gap-3 gap-6">
-          {socialMedia.map((info) => (
-            <div
-              key={info.id}
-              className="w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200 rounded-lg border border-black-300"
+      {/* Background Grid */}
+      <div className="max-w-7xl mx-auto px-6 flex flex-wrap justify-between items-center">
+        {/* Company Information */}
+        <div className="w-full md:w-1/3 mb-6 md:mb-0">
+          <h2 className="text-2xl font-bold mb-2 text-purple-500">
+            Third Rock Technologies
+          </h2>
+          <p>
+            Empowering businesses to achieve{" "}
+            <span className="font-semibold text-blue-400">
+              digital excellence
+            </span>
+            .
+          </p>
+          <p>
+            <span className="font-bold">Address:</span> Daripara, Jamalpur
+            Sadar, Jamalpur.
+          </p>
+          <p>
+            <span className="font-bold">Email:</span>{" "}
+            <a
+              href="mailto:info@thirdrock-tech.com"
+              className="text-purple-400 hover:underline"
             >
-              <img src={info.img} alt="icons" width={20} height={20} />
-            </div>
+              info@thirdrock-tech.com
+            </a>
+          </p>
+          <p>
+            <span className="font-bold">Phone:</span> +8801784818346
+          </p>
+        </div>
+
+        {/* Quick Links */}
+        <div className="w-full md:w-1/4 mb-6 md:mb-0">
+          <h2 className="text-xl font-bold mb-4">Quick Links</h2>
+          <ul className="space-y-2">
+            {["Home", "About", "Services", "Projects", "Contact"].map(
+              (item) => (
+                <li key={item} className="hover:text-purple-400 transition">
+                  <a href={`/${item.toLowerCase()}`}>{item}</a>
+                </li>
+              )
+            )}
+          </ul>
+        </div>
+
+        {/* Social Media Links */}
+        <div className="w-full mt-6 md:mt-0 flex items-center space-x-6">
+          {socialMedia?.map((info) => (
+            <a
+              key={info.id}
+              href={info.link} // Add the link for each social media item
+              target="_blank" // Open the link in a new tab
+              rel="noopener noreferrer" // For security
+            >
+              <div className="w-12 h-12 rounded-full flex justify-center items-center bg-gray-800 hover:bg-purple-500 transition">
+                <img src={info.img} alt="social" width={24} height={24} />
+              </div>
+            </a>
           ))}
         </div>
       </div>
+
+      {/* Footer Bottom */}
+      <div className="mt-8 text-center border-t pt-4 border-gray-700">
+        <p>&copy; 2024 Third Rock Technologies | All Rights Reserved</p>
+        <p>Designed and developed by the Third Rock Technologies team 🚀</p>
+      </div>
+
+      {/* Scroll to Top Button */}
+      <button
+        onClick={scrollToTop}
+        className="fixed bottom-8 right-8 bg-purple-500 text-white p-3 rounded-full shadow-lg hover:bg-purple-600 transition"
+      >
+        <FaArrowUp size={24} />
+      </button>
     </footer>
   );
 };

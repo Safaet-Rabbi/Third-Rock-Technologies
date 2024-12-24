@@ -1,47 +1,75 @@
 "use client";
 
 import React from "react";
-
+import { motion } from "framer-motion"; // Import Framer Motion
 import { companies, testimonials } from "@/data";
 import { InfiniteMovingCards } from "./ui/InfiniteCards";
 
 const Clients = () => {
   return (
     <section id="testimonials" className="py-20">
-      <h1 className="heading">
+      {/* Animate the section header */}
+      <motion.h1
+        className="heading"
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
         Kind words from
         <span className="text-purple"> satisfied clients</span>
-      </h1>
+      </motion.h1>
 
       <div className="flex flex-col items-center max-lg:mt-10">
-        <div
-          // remove bg-white dark:bg-black dark:bg-grid-white/[0.05], h-[40rem] to 30rem , md:h-[30rem] are for the responsive design
-          className="h-[50vh] md:h-[30rem] rounded-md flex flex-col antialiased  items-center justify-center relative overflow-hidden"
+        <motion.div
+          className="h-[50vh] md:h-[30rem] rounded-md flex flex-col antialiased items-center justify-center relative overflow-hidden"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
         >
           <InfiniteMovingCards
             items={testimonials}
             direction="right"
             speed="slow"
           />
-        </div>
+        </motion.div>
 
-        <div className="flex flex-wrap items-center justify-center gap-4 md:gap-16 max-lg:mt-10">
-          {companies.map((company) => (
-            <React.Fragment key={company.id}>
-              <div className="flex md:max-w-60 max-w-32 gap-2">
+        {/* Animate the second header */}
+        <motion.h1
+          id="features"
+          className="heading"
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          Our
+          <span className="text-purple"> Tech stack</span>
+        </motion.h1>
+
+        <br />
+
+        <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16 max-lg:mt-10">
+          {companies.map((company, index) => (
+            <motion.div
+              key={company.id}
+              className="flex flex-col items-center"
+              initial={{ opacity: 0, y: -50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 1,
+                delay: 0.1 * index, // Stagger the animations for each company logo
+              }}
+            >
+              <div className="relative flex items-center justify-center md:w-20 md:h-20 w-14 h-14 bg-gray-800 rounded-full border-4 border-violet-400 shadow-lg">
                 <img
                   src={company.img}
                   alt={company.name}
-                  className="md:w-10 w-5"
-                />
-                <img
-                  src={company.nameImg}
-                  alt={company.name}
-                  width={company.id === 4 || company.id === 5 ? 100 : 150}
-                  className="md:w-24 w-20"
+                  className="w-2/3 h-2/3 object-contain"
                 />
               </div>
-            </React.Fragment>
+              <span className="mt-2 text-white text-center text-sm md:text-base">
+                {company.title}
+              </span>
+            </motion.div>
           ))}
         </div>
       </div>

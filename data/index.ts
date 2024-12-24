@@ -2,13 +2,14 @@ export const navItems = [
   { name: "About", link: "#about" },
   { name: "Projects", link: "#projects" },
   { name: "Testimonials", link: "#testimonials" },
+  { name: "Features", link: "#features" },
   { name: "Contact", link: "#contact" },
 ];
 
 export const gridItems = [
   {
     id: 1,
-    title: "I prioritize client collaboration, fostering open communication ",
+    title: "We prioritize client collaboration, fostering open communication ",
     description: "",
     className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
     imgClassName: "w-full h-full",
@@ -18,7 +19,7 @@ export const gridItems = [
   },
   {
     id: 2,
-    title: "I'm very flexible with time zone communications",
+    title: "We overlap 4 hours according to USA Time zone.",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-2",
     imgClassName: "",
@@ -26,18 +27,9 @@ export const gridItems = [
     img: "",
     spareImg: "",
   },
+
   {
     id: 3,
-    title: "My tech stack",
-    description: "I constantly try to improve",
-    className: "lg:col-span-2 md:col-span-3 md:row-span-2",
-    imgClassName: "",
-    titleClassName: "justify-center",
-    img: "",
-    spareImg: "",
-  },
-  {
-    id: 4,
     title: "Tech enthusiast with a passion for development.",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-1",
@@ -45,6 +37,28 @@ export const gridItems = [
     titleClassName: "justify-start",
     img: "/grid.svg",
     spareImg: "/b4.svg",
+  },
+  {
+    id: 4,
+    title: "Our tech stack",
+    description:
+      "We utilize the latest technologies to deliver exceptional solutions.",
+    className: "lg:col-span-2 md:col-span-3 md:row-span-2",
+    imgClassName: "",
+    titleClassName: "justify-center",
+    img: "",
+    spareImg: "",
+    skills: [
+      "TypeScript",
+      "Next.JS",
+      "Swift",
+      "Swift UI",
+      "Firebase",
+      "Prisma",
+      "MongoDB",
+      "PostGreSQL",
+      "mySQL",
+    ],
   },
 
   {
@@ -72,35 +86,27 @@ export const gridItems = [
 export const projects = [
   {
     id: 1,
-    title: "3D Solar System Planets to Explore",
-    des: "Explore the wonders of our solar system with this captivating 3D simulation of the planets using Three.js.",
-    img: "/p1.svg",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
-    link: "/ui.earth.com",
+    title: "AIBuddy Inc. Chat AI Bot, AIBot, AI Buddy",
+    des: "AIBuddy Inc. iOS app is your personal AI assistant, designed to boost productivity and provide intelligent solutions on the go.",
+    img: "/AIBuddy.png",
+    iconLists: ["/swift.svg", "/firebase.svg", "/openai.svg", "/coredata.png"],
+    link: "https://apps.apple.com/us/app/aibuddy-inc/id6446788161",
   },
   {
     id: 2,
-    title: "Yoom - Video Conferencing App",
-    des: "Simplify your video conferencing experience with Yoom. Seamlessly connect with colleagues and friends.",
-    img: "/p2.svg",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
-    link: "/ui.yoom.com",
+    title: "Todo and Everything App",
+    des: "Todo and Everything is an all-in-one iOS app for seamless task management and productivity tracking.",
+    img: "/todo.png",
+    iconLists: ["/swift.svg", "/firebase.svg", "/coredata.png"],
+    link: "https://apps.apple.com/za/app/todo-and-everything/id6443719490",
   },
   {
     id: 3,
-    title: "AI Image SaaS - Canva Application",
-    des: "A REAL Software-as-a-Service app with AI features and a payments and credits system using the latest tech stack.",
-    img: "/p3.svg",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
-    link: "/ui.aiimg.com",
-  },
-  {
-    id: 4,
-    title: "Animated Apple Iphone 3D Website",
-    des: "Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects..",
-    img: "/p4.svg",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
-    link: "/ui.apple.com",
+    title: "Shadhin Music iOS App",
+    des: "Shadhin Music is an iOS app offering unlimited access to Bangladeshi songs, playlists, and podcasts.",
+    img: "/shadhin.png",
+    iconLists: ["/api-mobile-program.svg", "/uikit.svg", "/swift.svg"],
+    link: "https://apps.apple.com/us/app/shadhin-music/id1481808365?platform=iphone",
   },
 ];
 
@@ -140,33 +146,51 @@ export const testimonials = [
 export const companies = [
   {
     id: 1,
-    name: "cloudinary",
-    img: "/cloud.svg",
-    nameImg: "/cloudName.svg",
+    name: "swift",
+    title: "Swift UI",
+    img: "/swift.svg",
   },
   {
     id: 2,
-    name: "appwrite",
-    img: "/app.svg",
-    nameImg: "/appName.svg",
+    name: "firebase",
+    title: "Firebase",
+    img: "/firebase.svg",
   },
   {
     id: 3,
-    name: "HOSTINGER",
-    img: "/host.svg",
-    nameImg: "/hostName.svg",
+    name: "postgresql",
+    title: "PostgreSQL",
+    img: "/postgresql.svg",
   },
   {
     id: 4,
     name: "stream",
-    img: "/s.svg",
-    nameImg: "/streamName.svg",
+    title: "mySQL",
+    img: "/mysql.png",
   },
   {
     id: 5,
-    name: "docker.",
-    img: "/dock.svg",
-    nameImg: "/dockerName.svg",
+    name: "Next.JS",
+    title: "Next.JS",
+    img: "/next.svg",
+  },
+  {
+    id: 6,
+    name: "TypeScript",
+    title: "TypeScript",
+    img: "/typescript.svg",
+  },
+  {
+    id: 7,
+    name: "Prisma",
+    title: "Prisma",
+    img: "/prisma.svg",
+  },
+  {
+    id: 8,
+    name: "MongoDB",
+    title: "MongoDB",
+    img: "/mongodb.svg",
   },
 ];
 
@@ -198,6 +222,13 @@ export const workExperience = [
     desc: " Offers complete flexibility to tailor features, design, and functionality to your unique business needs.",
     className: "md:col-span-2",
     thumbnail: "/exp4.svg",
+  },
+  {
+    id: 5,
+    title: "Modern iOS Apps with SwiftUI",
+    desc: "Modern iOS apps with SwiftUI focus on creating intuitive, visually appealing, and highly responsive user interfaces using a declarative syntax, enabling faster development and seamless integration with Apple's ecosystem.",
+    className: "md:col-span-2",
+    thumbnail: "/exp3.svg",
   },
 ];
 

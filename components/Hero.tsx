@@ -55,22 +55,24 @@ const Hero = () => {
           </div>
 
           {/* Toggling Text */}
-          <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
-            Empowering Businesses with{" "}
-            {typeof window !== "undefined" && showTyping ? (
-              <span className="text-blue-600 typing-animation">
-                IT Solutions and Seamless Technology Integration
-              </span>
-            ) : (
-              <span className="invisible">
-                IT Solutions and Seamless Technology Integration
-              </span>
-            )}
+          <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl flex items-center justify-center whitespace-nowrap">
+            We craft innovative web, iOS, and Android{" "}
+            <span
+              className={`${
+                typeof window !== "undefined" && showTyping
+                  ? "text-blue-600 typing-animation"
+                  : "invisible"
+              } ml-2`}
+            >
+              {typeof window !== "undefined" && showTyping
+                ? "applications to elevate your business.".trim()
+                : ""}
+            </span>
           </p>
 
-          <a href="#about">
+          <a href="#projects">
             <MagicButton
-              title="Show my work"
+              title="Show our work"
               icon={<FaLocationArrow />}
               position="right"
             />
