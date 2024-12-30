@@ -72,7 +72,7 @@ export const BentoGridItem = ({
     "TypeScript",
     "Next.JS",
     "Swift",
-    "Swift UI",
+    "SwiftUI",
     "Firebase",
     "Prisma",
     "MongoDB",

@@ -52,7 +52,7 @@ export const gridItems = [
       "TypeScript",
       "Next.JS",
       "Swift",
-      "Swift UI",
+      "SwiftUI",
       "Firebase",
       "Prisma",
       "MongoDB",
@@ -63,7 +63,8 @@ export const gridItems = [
 
   {
     id: 5,
-    title: "Currently building a JS Animation library",
+    title:
+      "Currently building video editing iOS application and manage web application with TypeScript",
     description: "The Inside Scoop",
     className: "md:col-span-3 md:row-span-2",
     imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
@@ -147,7 +148,7 @@ export const companies = [
   {
     id: 1,
     name: "swift",
-    title: "Swift UI",
+    title: "SwiftUI",
     img: "/swift.svg",
   },
   {
@@ -204,7 +205,7 @@ export const workExperience = [
   },
   {
     id: 2,
-    title: "Next.js 15 (Latest)",
+    title: "Next.js(Latest)",
     desc: "Built with the most up-to-date version of Next.js for optimal performance and modern features.",
     className: "md:col-span-2", // change to md:col-span-2
     thumbnail: "/exp2.svg",
@@ -226,7 +227,14 @@ export const workExperience = [
   {
     id: 5,
     title: "Modern iOS Apps with SwiftUI",
-    desc: "Modern iOS apps with SwiftUI focus on creating intuitive, visually appealing, and highly responsive user interfaces using a declarative syntax, enabling faster development and seamless integration with Apple's ecosystem.",
+    desc: "Crafts intuitive, visually stunning, and responsive interfaces with SwiftUI for seamless Apple ecosystem integration.",
+    className: "md:col-span-2",
+    thumbnail: "/exp3.svg",
+  },
+  {
+    id: 6,
+    title: "AI-Powered Web Application",
+    desc: "Delivers intelligent automation, seamless interactions, and scalable solutions for diverse business needs.",
     className: "md:col-span-2",
     thumbnail: "/exp3.svg",
   },

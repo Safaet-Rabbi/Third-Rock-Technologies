@@ -56,7 +56,7 @@ const Hero = () => {
 
           {/* Toggling Text */}
           <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl flex items-center justify-center whitespace-nowrap">
-            We craft innovative web, iOS, and Android{" "}
+            We craft innovative web, iOS, and Android applications{" "}
             <span
               className={`${
                 typeof window !== "undefined" && showTyping
@@ -65,14 +65,14 @@ const Hero = () => {
               } ml-2`}
             >
               {typeof window !== "undefined" && showTyping
-                ? "applications to elevate your business.".trim()
+                ? "to elevate your business.".trim()
                 : ""}
             </span>
           </p>
 
           <a href="#projects">
             <MagicButton
-              title="Show our work"
+              title="Explore Our Projects"
               icon={<FaLocationArrow />}
               position="right"
             />

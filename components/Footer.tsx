@@ -1,4 +1,5 @@
 import { socialMedia } from "@/data/socialMedia"; // Make sure this file exports `socialMedia` array
+import { navItems } from "@/data/index"; // Import the `navItems` for quick links
 import { FaArrowUp } from "react-icons/fa"; // Import the up arrow icon
 import Contact from "./Contact";
 
@@ -10,6 +11,7 @@ const Footer = () => {
       behavior: "smooth", // Smooth scroll animation
     });
   };
+  const currentYear = new Date().getFullYear();
 
   return (
     <footer
@@ -18,7 +20,6 @@ const Footer = () => {
     >
       {/* Contact Section Component */}
       <Contact />
-
       {/* Background Grid */}
       <div className="max-w-7xl mx-auto px-6 flex flex-wrap justify-between items-center">
         {/* Company Information */}
@@ -55,13 +56,11 @@ const Footer = () => {
         <div className="w-full md:w-1/4 mb-6 md:mb-0">
           <h2 className="text-xl font-bold mb-4">Quick Links</h2>
           <ul className="space-y-2">
-            {["Home", "About", "Services", "Projects", "Contact"].map(
-              (item) => (
-                <li key={item} className="hover:text-purple-400 transition">
-                  <a href={`/${item.toLowerCase()}`}>{item}</a>
-                </li>
-              )
-            )}
+            {navItems.map((item) => (
+              <li key={item.name} className="hover:text-purple-400 transition">
+                <a href={item.link}>{item.name}</a>
+              </li>
+            ))}
           </ul>
         </div>
 
@@ -81,13 +80,13 @@ const Footer = () => {
           ))}
         </div>
       </div>
-
       {/* Footer Bottom */}
       <div className="mt-8 text-center border-t pt-4 border-gray-700">
-        <p>&copy; 2024 Third Rock Technologies | All Rights Reserved</p>
+        <p>
+          &copy; {currentYear} Third Rock Technologies | All Rights Reserved
+        </p>
         <p>Designed and developed by the Third Rock Technologies team 🚀</p>
       </div>
-
       {/* Scroll to Top Button */}
       <button
         onClick={scrollToTop}
